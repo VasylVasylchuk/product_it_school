@@ -1,5 +1,7 @@
 const Product = () => {
-  return <div>Product</div>
+  
+  return ;
+
 };
 
 export default Product;
