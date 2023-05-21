@@ -2,13 +2,16 @@ import {  Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Product from './components/Product/Product';
 import NoPage from './components/NoPage/NoPage';
+import Header from "./components/Header/Header";
+import Categories from "./components/Categories/Categories";
 
 const ShopRouters = () => {
   return <>
     <Routes>
-      <Route path="/">  
+      <Route path="/" element={<Header />}>  
         <Route index element={<Home />} />
         <Route path="product/:id" element={<Product />} />
+        <Route path="categories/:id" element={<Categories />}/>  
         <Route path="*" element={<NoPage />} /> 
       </Route>
       {/* TODO */}
