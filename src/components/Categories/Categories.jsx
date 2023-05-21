@@ -14,9 +14,9 @@ const Categories = () => {
         {id}
       </Typography>
       <Grid container spacing={3}>
-        {products.map((_) => (
-          <Grid key={_.id} item xs={2} xl={3}>
-            <CardProduct product={_} />
+        {products.map(product => (
+          <Grid key={product.id} item xs={2} xl={3}>
+            <CardProduct product={product} />
           </Grid>
         ))}
       </Grid>
