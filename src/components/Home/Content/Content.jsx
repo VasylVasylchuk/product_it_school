@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
 import CardProduct from "../../CardProduct/CardProduct";
-import { MOCK_DATA } from "../../../mock-data";
 import { Grid } from '@mui/material';
+import { getAllProducts } from "../../../store/products/productsSelectors";
 
 const Content = () => {
+  const products = useSelector(getAllProducts)
   return (
     <Grid container spacing={3}>
-      {MOCK_DATA.map((_) => (
+      {products.map((_) => (
         <Grid key={_.id} item xs={2} xl={3}>
           <CardProduct  product={_} />
         </Grid>

@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import { Typography } from "@mui/material";
-import { MOCK_DATA } from "../../mock-data";
 import CardProduct from "../CardProduct/CardProduct";
 import { Grid } from '@mui/material';
+import { useSelector } from "react-redux";
+import { getProductsByCategory } from "../../store/products/productsSelectors";
 
 const Categories = () => {
   const { id } = useParams();
-  const products = MOCK_DATA.filter((_) => _.category === id);
+  const products = useSelector(getProductsByCategory(id));
   return (
     <>
       <Typography variant="h2" component="h3">

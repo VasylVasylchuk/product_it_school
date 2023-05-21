@@ -1,8 +1,9 @@
-import { MOCK_DATA } from "../../../mock-data";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCategoriesUniqNames } from "../../../store/products/productsSelectors";
 
 const Menu = () => {
-  const categories = MOCK_DATA.map(_ => _.category).filter((age, index, arr) => arr.indexOf(age) === index).sort();
+  const categories = useSelector(getCategoriesUniqNames)
   return <ul>
     {categories.map(_ => <li key={_}><Link to={`categories/${_}`}>{_}</Link></li>)}
   </ul>
