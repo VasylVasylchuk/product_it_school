@@ -11,7 +11,7 @@ const ShopRouters = () => {
       <Route path="/" element={<Header />}>  
         <Route index element={<Home />} />
         <Route path="product/:id" element={<Product />} />
-        <Route path="categories/:id" element={<Categories />}/>  
+        <Route path="categories/:categoryId" element={<Categories />}/>  
         <Route path="*" element={<NoPage />} /> 
       </Route>
       {/* TODO */}

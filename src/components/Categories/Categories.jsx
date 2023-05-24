@@ -6,12 +6,12 @@ import { useSelector } from "react-redux";
 import { getProductsByCategory } from "../../store/products/productsSelectors";
 
 const Categories = () => {
-  const { id } = useParams();
-  const products = useSelector(getProductsByCategory(id));
+  const { categoryId } = useParams();
+  const products = useSelector(getProductsByCategory(categoryId));
   return (
     <>
       <Typography variant="h2" component="h3">
-        {id}
+        {categoryId}
       </Typography>
       <Grid container spacing={3}>
         {products.map(product => (
