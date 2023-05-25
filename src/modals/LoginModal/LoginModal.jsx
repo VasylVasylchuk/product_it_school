@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 
 import Dialog from '@mui/material/Dialog';
@@ -9,7 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import LoginForm from './LoginForm';
 
 export default function FormDialog() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,6 +24,7 @@ export default function FormDialog() {
       <Button variant="outlined" onClick={handleClickOpen}>
         Sing In
       </Button>
+      
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Login</DialogTitle>
         <DialogContent>
