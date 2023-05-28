@@ -1,8 +1,13 @@
 import { Outlet } from "react-router-dom";
+import ModalWinRegistration from "../../modals/Login/ModalWinRegistration";
+import './Header.css'
 
 const Header = () => {
   return <>
-    <div>HEADER</div>
+    <div className='header'>
+      <span className='header_title' >Header</span>
+    <ModalWinRegistration />
+    </div>
     <Outlet />
   </>
 
