@@ -29,7 +29,7 @@ function ModalWinRegistration () {
   return (
       <>
         <Button variant="outlined" onClick={handleClickOpen}>
-          Sign In
+          Sign Up
         </Button>
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Registration form</DialogTitle>
