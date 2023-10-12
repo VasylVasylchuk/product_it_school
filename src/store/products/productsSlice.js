@@ -8,7 +8,6 @@ export const resetStore = {
 
 export const initialState = {
 	products: [],
-	
 };
 
 const productsSlice = createSlice({

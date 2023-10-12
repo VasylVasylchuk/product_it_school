@@ -1,9 +1,6 @@
 import React, {useState} from "react";
-import {Button, Dialog, DialogContent, DialogTitle, TextField, DialogContentText } from '@mui/material';
+import {Button, Dialog, DialogContent, DialogTitle} from '@mui/material';
 import FormValidation from "./FormValidation";
-import DialogActions from "@mui/material/DialogActions";
-
-
 
 function ModalWinRegistration () {
   const [open, setOpen] = useState(false);
@@ -37,9 +34,10 @@ function ModalWinRegistration () {
             <FormValidation handleClose={handleClose} savedRegistrationValues={savedRegistrationValues} />
           </DialogContent>
 
-        </Dialog>
+        </Dialog>x
       </>
   );
 }
 
 export default ModalWinRegistration
+

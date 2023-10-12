@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import LoginForm from './LoginForm';
+import Header from '../../components/Header/Header';
 
 export default function FormDialog() {
   const [open, setOpen] = useState(false);
@@ -25,6 +26,7 @@ export default function FormDialog() {
         Sing In
       </Button>
       
+      <Header />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Login</DialogTitle>
         <DialogContent>

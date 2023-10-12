@@ -2,7 +2,9 @@ import { RESET_STORE } from '../products/productsSlice';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const initialState = {
-	name: ''
+	name: '',
+	isTouched: false,
+	firstName: ''
 };
 
 const userSlice = createSlice({
@@ -13,8 +15,14 @@ const userSlice = createSlice({
 	},
 	reducers: {
 		setName (state, action) {
-			state.token = action.payload;
+			state.name = action.payload;
 		},
+		changeTouchStatus (state) {
+			state.isTouched = !state.isTouched;
+		},
+		setFirstName (state, action) {
+			state.firstName = action.payload;
+		}
 	},
 });
 

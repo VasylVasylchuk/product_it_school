@@ -1,5 +1,5 @@
 const NoPage = () => {
-  return <div>
+  return <div style={{textAlign: 'center', fontSize: 36, marginTop: '40vh'}}>
     NoPage
   </div>
 };

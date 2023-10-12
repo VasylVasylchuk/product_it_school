@@ -1,18 +1,18 @@
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Product from './components/Product/Product';
-import NoPage from './components/NoPage/NoPage';
+import Product from "./components/Product/Product";
+import NoPage from "./components/NoPage/NoPage";
 import Header from "./components/Header/Header";
 import Categories from "./components/Categories/Categories";
 
 const ShopRouters = () => {
-  return <>
+  return (
     <Routes>
-      <Route path="/" element={<Header />}>  
+      <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
-        <Route path="product/:id" element={<Product />} />
-        <Route path="categories/:categoryId" element={<Categories />}/>  
-        <Route path="*" element={<NoPage />} /> 
+        <Route path="product" element={<Product />} />
+        <Route path="categories/:categoryId" element={<Categories />} /> 
+        <Route path="*" element={<NoPage />} />
       </Route>
       {/* TODO */}
       {/* <Route path="profile" element={<Profile />} />
@@ -21,7 +21,7 @@ const ShopRouters = () => {
       <Route path="bucket" element={<Bucket />} />
       <Route path="*" element={<NoPage />} /> */}
     </Routes>
-  </>;
+  );
 };
 
 export default ShopRouters;
