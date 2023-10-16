@@ -1,4 +1,3 @@
-import { RESET_STORE } from '../products/productsSlice';
 import { createSlice } from '@reduxjs/toolkit';
 
 export const initialState = {
@@ -10,9 +9,6 @@ export const initialState = {
 const userSlice = createSlice({
 	name: 'user',
 	initialState,
-	extraReducers: (builder) => {
-		builder.addCase(RESET_STORE, () => initialState);
-	},
 	reducers: {
 		setName (state, action) {
 			state.name = action.payload;

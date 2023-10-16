@@ -1,5 +1,7 @@
 export const getAllProducts = (state) => state.products.products;
 
+export const getOrdererName = (state) => state.products.ordererName;
+
 export const getProductById = (id) => (state) =>
   state.products.products.find((_) => _.id === id);
 

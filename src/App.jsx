@@ -1,17 +1,15 @@
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-import ShopRouters from "./ShopRouters";
 import { useEffect } from "react";
 import { getProductsFromBE } from './store/products/productsRequest';
 import {useDispatch} from 'react-redux';
 import Product from "./components/Product/Product";
-import { getFirstName } from './store/user/userSelectors';
+import { getOrdererName } from './store/products/productsSelectors';
 import { useSelector } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
 
-  const firstName = useSelector(getFirstName);
+  const firstName = useSelector(getOrdererName);
   
   useEffect(() => {
     getProductsFromBE(dispatch);

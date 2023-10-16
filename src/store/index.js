@@ -1,32 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer  from './rootReduser';
+import { combineReducers } from 'redux';
 
-// const isDevelopment = process.env.NODE_ENV === 'development';
-const isDevelopment = true;
-const middlewares = [];
+import products from './products/productsSlice';
 
-if (isDevelopment) {
-	const { logger } = require('redux-logger');
-	middlewares.push(logger);
-}
-
-const apply = applyMiddleware(
-	thunkMiddleware,
-	...middlewares
-);
-
-export const configureAppStore = () => {
-	const store = configureStore({
-		reducer: rootReducer,
-		devTools: isDevelopment,
-		enhancers: [apply],
-	});
-
-	return store;
-};
-
-const store = configureAppStore();
+const store = configureStore({
+	reducer: combineReducers({
+		products
+	})
+});
 
 export default store;
