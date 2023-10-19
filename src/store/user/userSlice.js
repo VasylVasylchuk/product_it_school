@@ -1,17 +1,29 @@
-import { RESET_STORE } from '../products/productsSlice';
 import { createSlice } from '@reduxjs/toolkit';
-
+import { getPosts } from './userRequest';
 export const initialState = {
 	name: '',
 	isTouched: false,
-	firstName: ''
+	firstName: '',
+	isLauding: false,
+	post: []
 };
+
 
 const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	extraReducers: (builder) => {
-		builder.addCase(RESET_STORE, () => initialState);
+		builder.addCase(getPosts.pending, (state) => {
+			state.isLauding = true;
+		});
+		builder.addCase(getPosts.fulfilled, (state, action) => {
+			state.isLauding = false;
+			state.post = action.payload;
+		});
+		builder.addCase(getPosts.rejected, (state, action) => {
+			console.log(action)
+			state.isLauding = false;
+		});
 	},
 	reducers: {
 		setName (state, action) {

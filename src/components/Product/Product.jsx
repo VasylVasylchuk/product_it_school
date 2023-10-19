@@ -2,15 +2,12 @@ import React, {useRef} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProducts } from "./../../store/products/productsSelectors";
 import { userActions } from "../../store/user/userSlice";
+import useFriendStatus from '../../hooks/useFriendStatus';
 
 const Product = () => {
   const input = useRef(null);
   const dispatch = useDispatch();
-  const allproducts = useSelector((store) => {
-    console.log(store);
-    return getAllProducts(store);
-  });
-
+  const allproducts = useFriendStatus();
   const setData = () => {
     dispatch(userActions.setFirstName(input.current.value));
   }

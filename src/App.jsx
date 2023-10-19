@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux';
 import Product from "./components/Product/Product";
 import { getFirstName } from './store/user/userSelectors';
 import { useSelector } from 'react-redux';
+import { getPosts } from './store/user/userRequest'
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function App() {
   
   useEffect(() => {
     getProductsFromBE(dispatch);
+    dispatch(getPosts())
   },[dispatch]) 
 
   return (
