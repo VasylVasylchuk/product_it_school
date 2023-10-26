@@ -1,16 +1,14 @@
-import React, {useRef} from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useRef } from "react";
+import { connect } from "react-redux";
 import { getAllProducts } from "./../../store/products/productsSelectors";
 import { productsActions } from "../../store/products/productsSlice";
 
-const Product = () => {
+const Product = ({ allproducts, setOrdererName }) => {
   const input = useRef(null);
-  const dispatch = useDispatch();
-  const allproducts = useSelector(getAllProducts);
 
   const setData = () => {
-    dispatch(productsActions.setOrdererName(input.current.value));
-  }
+    setOrdererName(input.current.value);
+  };
 
   return (
     <div>
@@ -18,11 +16,16 @@ const Product = () => {
       <button onClick={setData}>CLICK</button>
       {allproducts.map((product) => (
         <div key={product.id}>
-          <p style={{color: 'black'}}>{product.title}</p> <br></br>
+          <p style={{ color: "black" }}>{product.title}</p> <br></br>
         </div>
       ))}
     </div>
   );
 };
 
-export default Product;
+export default connect(
+  (state) => ({ allproducts: getAllProducts(state) }),
+  (dispatch) => ({
+    setOrdererName: dispatch(productsActions.setOrdererName),
+  })
+)(Product);
