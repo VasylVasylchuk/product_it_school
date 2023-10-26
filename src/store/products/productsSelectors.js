@@ -1,4 +1,7 @@
-export const getAllProducts = (state) => state.products.products;
+export const getAllProducts = (state) => {
+  const { products } = state.products;
+  return { products };
+};
 
 export const getOrdererName = (state) => state.products.ordererName;
 
